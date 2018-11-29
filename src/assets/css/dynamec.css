@@ -1,0 +1,219 @@
+  
+ .icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 1.3em; height: 1.3em;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+     normalize.css 中也包含这行 */
+  overflow: hidden;
+}
+  .dynamec {
+    background-color: #fff;
+  }
+  .aaa {
+    background-color: #fff;
+  }
+  .divHeader img {
+    float: left;
+  }
+  .boyContent{
+    background-color: #FFF;
+  }
+  .divimgHeader {
+    width: 100vw;
+    height: 36vh;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center;
+    border: 0px;
+    background: #fff no-repeat center;
+    background-size: cover;
+  }
+  .divHeader .imgHeader {
+    width: 100vw;
+    padding-bottom: 0px;
+    margin: 0px;
+  }
+  .divHeader .imgTitle {
+    width: 26vw;
+    height: 26vw;
+    margin-top: -28vw;
+    margin-left: 2vw;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+  }
+  
+  .divContent {
+    padding: 2vw;
+    background-color: #fff;
+    width: 100vw;
+    border: 0px solid red;
+    text-align: left;
+  }
+  .divTitle {
+    border: 0px solid red;
+    width: 96vw;
+  }
+  .divContent .imgTitle {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: 0px solid rgb(255, 255, 255);
+      background-color: #fff;
+  }
+  .divContent .divImgtitle,
+  .divContent .divTitleContent {
+    float: left;
+    border: 0px solid red;
+    margin: 0;
+    padding: 0;
+    height: 10vw;
+  }
+  .divContent .divTitleContent {
+    padding-left: 1vw;
+    width: 85vw;
+  }
+  .aaaa p{
+    padding: 0;
+    margin: 0;
+  }
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    border: 0px solid red;
+  }
+  
+  ul li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 0px solid red;
+  }
+  
+  .liName {
+    color: rgb(0, 0, 0);
+    line-height: 4.6vw;
+    text-align: left;
+    overflow: hidden;
+    font-size: 4.6vw;
+    padding-bottom: 0.4vw;
+  }
+  .liNameA {
+    text-align: left;
+    line-height: 3.6vw;
+    overflow: hidden;
+    font-size: 3.6vw;
+    padding-top: 1.4vw;
+  }
+  .divContentText {
+    padding-top: 2vw;
+    border: 0px solid red;
+    width: 96vw;
+    font-size: 4vw;
+    line-height: 5.5vw;
+    text-indent: 2em;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* display: -webkit-box;
+   -webkit-line-clamp: 10; */
+    -webkit-box-orient: vertical;
+  }
+  .divContentImg {
+    padding-top: 2vw;
+  }
+  .img-listA {
+    text-align: left;
+    border: 0px;
+  }
+  .img-listA img {
+    margin: 0.5vw;
+    text-align: center;
+    float: left;
+    border: 0px;
+    position: relative;
+    display: block;
+    width: 31vw;
+    height: 31vw;
+    object-fit: cover;
+  }
+  
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  .Rotation {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 3s linear infinite;
+    -moz-animation: rotation 3s linear infinite;
+    -webkit-animation: rotation 3s linear infinite;
+    -o-animation: rotation 3s linear infinite;
+    width: 18px;
+    height: 18px;
+  }
+  .RotationB {
+    -webkit-transform: rotate(180deg);
+    width: 18px;
+    height: 18px;
+  }
+  .RotationA {
+    width: 18px;
+    height: 18px;
+  }
+  .mint-loadmore-top,
+  .mint-loadmore-bottom {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+        .mint-popup-2 {
+          width: 100%;
+          height: 40px;
+          text-align: center;
+          background-color: rgba(0,0,0,.7);
+          backface-visibility: hidden;
+        }
+  
+        .mint-popup-2 p {
+          line-height: 40px;
+          color: #fff;
+        }
+  
+
+ .page-infinite-loading {
+     text-align: center;
+     height: 50px;
+     line-height: 50px;
+     color: #fff;
+    }
+
+.router-link {
+   text-decoration: none;
+   color: #333;
+}
+.CommentsContent{
+  font-size: 13px;
+}
+.hrCommentsContent{
+  margin:4px 0px;
+  height:1px;border:none;border-top:1px solid rgb(236, 236, 236);
+}
+.hrCommentsContent span{
+  color:#285c9d;
+}
+
+.Fabulous{
+  color: #333;
+}
+.comment{
+  padding-top: 3px;
+}

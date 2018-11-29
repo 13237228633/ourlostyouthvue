@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://www.17sucai.com/preview/776331/2017-12-25/easyEditor/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>easyEditor</title>
+		<link rel="stylesheet" href="./easyEditor_files/easyEditor.css">
+		<script src="./easyEditor_files/easyEditor.js.下载"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			button {
+				cursor: pointer;
+			}
+			
+			#easyEditor {
+				width: 500px;
+				height: 300px;
+				box-shadow: 0px 0px 20px 4px #aaa;
+				border-radius: 10px;
+				padding: 4px;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			
+			#nav {
+				width: 500px;
+				margin: 0 auto;
+				margin-top: 10px;
+			}
+			
+			#nav>div {
+				float: left;
+			}
+			
+			#emoji {
+				width: 30px;
+				height: 30px;
+				position: relative;
+			}
+			
+			#emoji .emoji_btn {
+				width: 100%;
+				cursor: pointer;
+			}
+			
+			.clearfloat {
+				zoom: 1;
+			}
+			
+			.clearfloat:after {
+				content: "";
+				display: block;
+				height: 0;
+				visibility: hidden;
+				clear: both;
+			}
+			
+			#emoji_list {
+				width: 300px;
+				height: 85px;
+				padding: 4px;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flexbox;
+				display: flex;
+				display: none;
+				flex-flow: wrap;
+				justify-content: space-between;
+				align-content: space-between;
+				background-color: #fff;
+			}
+			
+			#emoji_list li {
+				width: 30px;
+				height: 24px;
+				text-align: center;
+				float: left;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			#at,
+			#getHtml,
+			#getText {
+				height: 30px;
+				line-height: 30px;
+				margin-left: 15px;
+			}
+			#show{
+				width: 500px;
+				margin: 0 auto;
+				word-break: break-all;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">easyEditor</h1>
+		<div id="easyEditor" class="easyEditor" spellcheck="false" contenteditable="true"></div>
+		<div id="nav" class="clearfloat">
+			<div id="emoji">
+				<img id="emoji_btn" class="emoji_btn" src="./easyEditor_files/1.gif" alt="" title="插入表情">
+				<ul id="emoji_list" style="display: none;">
+					<li><img src="./easyEditor_files/1.gif" alt=""></li>
+					<li><img src="./easyEditor_files/2.gif" alt=""></li>
+					<li><img src="./easyEditor_files/3.gif" alt=""></li>
+					<li><img src="./easyEditor_files/4.gif" alt=""></li>
+					<li><img src="./easyEditor_files/5.gif" alt=""></li>
+					<li><img src="./easyEditor_files/6.gif" alt=""></li>
+					<li><img src="./easyEditor_files/7.gif" alt=""></li>
+					<li><img src="./easyEditor_files/8.gif" alt=""></li>
+					<li><img src="./easyEditor_files/9.gif" alt=""></li>
+					<li><img src="./easyEditor_files/10.gif" alt=""></li>
+					<li><img src="./easyEditor_files/11.gif" alt=""></li>
+					<li><img src="./easyEditor_files/12.gif" alt=""></li>
+					<li><img src="./easyEditor_files/13.gif" alt=""></li>
+					<li><img src="./easyEditor_files/14.gif" alt=""></li>
+					<li><img src="./easyEditor_files/15.gif" alt=""></li>
+					<li><img src="./easyEditor_files/16.gif" alt=""></li>
+					<li><img src="./easyEditor_files/17.gif" alt=""></li>
+					<li><img src="./easyEditor_files/18.gif" alt=""></li>
+					<li><img src="./easyEditor_files/19.gif" alt=""></li>
+					<li><img src="./easyEditor_files/20.gif" alt=""></li>
+					<li><img src="./easyEditor_files/21.gif" alt=""></li>
+					<li><img src="./easyEditor_files/22.gif" alt=""></li>
+					<li><img src="./easyEditor_files/23.gif" alt=""></li>
+					<li><img src="./easyEditor_files/24.gif" alt=""></li>
+					<li><img src="./easyEditor_files/25.gif" alt=""></li>
+					<li><img src="./easyEditor_files/26.gif" alt=""></li>
+					<li><img src="./easyEditor_files/27.gif" alt=""></li>
+				</ul>
+			</div>
+			<div id="at">
+				<button id="atBtn">@某某</button>
+			</div>
+			<div id="getHtml">
+				<button id="getHtmlBtn">获取内容Html</button>
+			</div>
+			<div id="getText">
+				<button id="getTextBtn">获取内容Text</button>
+			</div>
+		</div>
+		<div id="show"></div>
+
+		<script>
+			var editor = new EasyEditor('easyEditor');
+
+			//表情			
+			var emojiBtn = document.getElementById('emoji_btn');
+			var emojiBox = document.getElementById('emoji_list');
+			var emojiList = emojiBox.getElementsByTagName('img');
+			//辦定事件添加表情
+			for(var i = 0; i < emojiList.length; i++) {
+				addEvent(emojiList[i], 'click', function() {
+					var src = this.getAttribute('src');
+					editor.insertEmoji({
+						src : src,
+						remark : '笑脸'
+					}); //添加表情
+					emojiBox.style.display = 'none';
+				});
+			}
+
+			//At人
+			var atBtn = document.getElementById('atBtn');
+			addEvent(atBtn, 'click', function() {
+				//添加At人
+				editor.insertBlock({
+					text : '@某某',
+					color : '#f00'
+				}); 
+			});
+
+			var showBox = document.getElementById('show');
+
+			//获取HTML
+			var htmlBtn = document.getElementById('getHtmlBtn');
+			addEvent(htmlBtn, 'click', function() {
+				showBox.innerHTML = htmlEncode(editor.getContent(false));
+			});
+			
+			//獲取text
+			var textBtn = document.getElementById('getTextBtn');
+			addEvent(textBtn, 'click', function() {
+				showBox.innerHTML = htmlEncode(editor.getContent(true));
+			});
+
+
+			//表情面板顯示
+			addEvent(emojiBtn, 'click', function() {
+				emojiBox.style.display = 'flex';
+			});
+			//表情面板消失
+			maskClick(emojiBox, function() {
+				emojiBox.style.display = 'none';
+			});
+
+			function maskClick(el, func) {
+				var str = str == undefined ? 'maskClick' : str;
+				addEvent(document, 'mouseup', function(event) {
+					var event = event || window.event;
+					var target = event.target;
+					if(!isParent(target, el)) {
+						func && func();
+					}
+				});
+			}
+
+			function isParent(obj, parentObj) {
+				while(obj != undefined && obj != null && obj.tagName != 'HTML' && obj.tagName.toUpperCase() != 'BODY') {
+					if(obj == parentObj) {
+						return true;
+					}
+					obj = obj.parentNode;
+				}
+				return false;
+			}
+			//事件辦定
+			function addEvent(element, type, callback) {
+				if(element.addEventListener) {
+					element.addEventListener(type, callback, false);
+				} else if(element.attachEvent) {
+					element.attachEvent('on' + type, callback)
+				}
+			}
+			//正则转换
+			function htmlEncode(strHTML){
+				var strTem = "";
+				if(strHTML.length == 0) return "";
+				strTem = strHTML.replace(/&/g, "&gt;");
+				strTem = strTem.replace(/</g, "&lt;");
+				strTem = strTem.replace(/>/g, "&gt;");
+				strTem = strTem.replace(/ /g, "&nbsp;");
+				strTem = strTem.replace(/\'/g, "&#39;");
+				strTem = strTem.replace(/\"/g, "&quot;");
+				strTem = strTem.replace(/\n/g, "");
+				return strTem;
+			}
+		</script>
+	
+
+</body></html>

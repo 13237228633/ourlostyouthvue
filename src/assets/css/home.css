@@ -1,0 +1,30 @@
+
+  li {
+    width: 100%;
+    text-align: center
+  }
+  ul,li {
+    margin: 0px;
+    padding: 0px;
+  }
+  .page-infinite-listitem{
+    background-color: #727c8f;
+  }
+  img[lazy=loaded] {
+    width: 100%;
+    margin: 0px;
+    padding:0px;
+  }
+  
+  img[lazy=loading],img[lazy=error] {
+     width: 40px;
+     margin: 50% 0;
+    }
+  
+  p{-webkit-margin-after:0px}
+    
+  .page-infinite-loading  {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+  }
