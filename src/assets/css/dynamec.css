@@ -10,6 +10,9 @@
      normalize.css 中也包含这行 */
   overflow: hidden;
 }
+#wrapper{
+    padding-bottom: 55px;
+}
   .dynamec {
     background-color: #fff;
   }

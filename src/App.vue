@@ -3,13 +3,13 @@
 <keep-alive>
      <router-view></router-view>
 </keep-alive>    
- 
     <tab></tab>
   </div>
 </template>
 
 <script>
-import Tab from './components/tabbar/tabbar'
+ //import Tab from './components/tabbar/tabbar'
+import Tab from './components/tab/tab'
 import ExpressionEditor from './components/template/ExpressionEditor/ExpressionEditor.vue'
 
 export default {
@@ -26,9 +26,6 @@ export default {
   mounted() {
   }
 }
-
-//722/627
-//722/647
 </script>
 
 <style>
@@ -37,7 +34,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 40px;
-  padding-bottom: 55px;
+  /* padding-bottom: 55px; */
   font-family: "Microsoft YaHei";
 }
 
@@ -46,15 +43,6 @@ export default {
    padding: 0;
    font-family: "Microsoft YaHei";
   }
-.mint-popup {
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        z-index: 1000;
-}
-a {
-   text-decoration: none;
-}
 
 /* 子页面样式 */
 .children {
@@ -75,17 +63,16 @@ a {
   transform: translate3d(100%, 0, 0)
 }
 
-.imgtitle{
-  border-radius:30px
+/* 提示框样式 */
+.mint-spinner-double-bounce{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
-
-  .page-infinite-loading div{
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
+/* 清除浮动 */
   .clear{
     clear: both;
   }
+
 </style>

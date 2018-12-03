@@ -5,8 +5,6 @@
 //引入： import Vue from 'vue'
 //       import gallery from 'img-vuer'
 
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -34,36 +32,24 @@ Vue.use(moment);
 import Mint from 'mint-ui';
 Vue.use(Mint);
 
-
-
 import 'mint-ui/lib/style.css'
 import './assets/font/iconfont.css'
 import './assets/font/iconfont.js'
 import $ from 'jquery'
 
-// import VuePreview from 'vue-preview'
-
-// // defalut install
-// Vue.use(VuePreview)
- 
-//// with parameters install
-// Vue.use(VuePreview, {
-//   mainClass: 'pswp--minimal--dark',
-//   barsSize: {top: 0, bottom: 0},
-//   captionEl: false,
-//   fullscreenEl: false,
-//   shareEl: false,
-//   bgOpacity: 0.85,
-//   tapToClose: true,
-//   tapToToggleControls: false
-// })
-//npm install jquery --save
-//npm i vue-preview -S
-
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
 })
+
+Vue.prototype.back = function (UrlName) {
+  console.log(window.history)
+  if (window.history.length <= 2) {
+    this.$router.push({ name: UrlName});
+    return false
+  } else {
+    this.$router.go(-1)
+  }
+}

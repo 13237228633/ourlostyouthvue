@@ -4,7 +4,7 @@
   <i class="icon iconfont  icon-dongtai"  slot="right" v-on:click="func('dynamicAdd')"></i> 
 </mt-header>
 
- <transition name="slide" >
+ <transition name="slide">
         <keep-alive>
           <router-view></router-view>
          </keep-alive>
@@ -16,7 +16,7 @@
 
  <div class="page-popup">
     <mt-popup v-model="popupMessage" position="top" class="mint-popup-2" :modal="false">
-      <p> <i slot="icon" style="font-size:14px" class="icon iconfont icon-dui"></i>{{message}}</p>
+      <p> <i slot="icon" style="font-size:14px" class="icon iconfont icon-dui"></i>  {{message}}</p>
     </mt-popup>
   </div>
  <div   ref="wrapper" id="wrapper" class="page-loadmore-wrapper" :style="'height:'+wrapperHeight + 'px;overflow-y: scroll;' ">
@@ -59,7 +59,7 @@
      </div>
      <div  v-if="UserDynamicList.length==0" style="background:#FFF;padding-top:10px;text-align:center">你还没有发布动态哦~</div>
 
-    <div  v-for="(item,index,key) in UserDynamicList"  v-bind:key="key" class="aaaa">
+    <div  v-for="(item,index,key) in UserDynamicList"  v-bind:key="key" >
       <div  class="divContent">
         <!-- <router-link class="router-link" to="/home/User"> -->
             <div class="divTitle" v-on:click="func('User')">
@@ -78,11 +78,6 @@
             <div class="divContentImg">
               <ul class="img-listA">
                   <img   v-for="(itema,indexs,key) in item.ListdivContentImg" v-if="itema.src!=''"  v-bind:key="key"  v-gallery="'group2'+index"  :src="itema.src"/>
-                  <!-- http://www.ivusic.com/uploads/20180223/6cbf98f1d88e229081d1f50f2e650cd1.jpg -->
-                  <!-- <img  v-gallery:(groupName+index)  src="http://ocm0knkb1.bkt.clouddn.com/1-3.jpg"/>
-                  <img  v-gallery:(groupName+index)  src="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1515927169&di=f1ca36a97c12182d0a872d73608051a5&src=http://imgsrc.baidu.com/forum/pic/item/5fb478f5e0fe992522941e9734a85edf8fb171fe.jpg"/></li>
-                  <img  v-gallery:(groupName+index)  src="http://www.ivusic.com/uploads/20180223/72be13bcdb303bbf40ba7b155159cb4b.jpg"/>
-                  <img  v-gallery:(groupName+index)  src="http://www.ivusic.com/uploads/20180223/6cbf98f1d88e229081d1f50f2e650cd1.jpg"/> -->
                     <div style="clear: both;"></div>
               </ul>
             </div>
@@ -138,7 +133,7 @@ export default {
       clientHeight: 0,
       wrapperHeight: 0,
       UserHeadPortrait:'',
-      PageSize:30,
+      PageSize:5,
       CurrentIndex:1,
       userid:1
     };
@@ -234,7 +229,7 @@ export default {
     }
   },
   mounted() {
-    this.wrapperHeight = document.documentElement.clientHeight - 95;
+    this.wrapperHeight = document.documentElement.clientHeight - 40;
   },
   beforeRouteEnter(to, from, next) {
     console.log(from)

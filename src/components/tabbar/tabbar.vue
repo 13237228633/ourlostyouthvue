@@ -1,9 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="tabbar">
         <mt-tabbar  v-model="selected" fixed>
           <mt-tab-item id="dynamic" >
               <i  slot="icon" class="icon iconfont icon-news"></i>
-              <!-- <img slot="icon" src="../assets/100x100.png"> -->
               动态
           </mt-tab-item>
           <mt-tab-item id="index"  >
@@ -37,7 +36,7 @@ export default {
      this.linkActiveClass(this.$route.path)
     },
   watch: { 
-    selected: function (val, oldVal) {
+    selected (val, oldVal) {
        this.$router.push({
           path: "/"+val
         })
@@ -65,16 +64,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
+.tabbar{
+    background-color:rgba(255,255,255,0.5);
 }
 a {
   color: #929292;

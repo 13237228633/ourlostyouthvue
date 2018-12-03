@@ -8,7 +8,7 @@
     </transition>
     <!-- 测试跨域 -->
    <div>
-      <input type="button" value="测试"  @click="func('ceshi')"/>
+      <input type="button" value="测试"  @click="func('HomeUser')"/>
      </div>
    <!-- 测试跨域 -->
     <div ref="wrapper" :style="{ height: wrapperHeight + 'px' }" style="overflow:scroll;">

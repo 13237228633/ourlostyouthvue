@@ -7,10 +7,13 @@ export default new VueRouter ({
     {
       path: '/',
       redirect: 'dynamic',
+      isHied:true,
     },
     {
       path: '/dynamic',
       name: 'dynamic',
+      icon:'icon-news',
+      text:"动态",
       component: resolve => require(['../components/dynamic/dynamic'], resolve),
       meta: {
         keepAlive: true
@@ -41,6 +44,8 @@ export default new VueRouter ({
     {
       path: '/index',
       name: 'index',
+      icon:'icon-shouye',
+      text:"首页",
       component: resolve => require(['../components/index/index'], resolve),
       meta: {
         keepAlive: true
@@ -67,6 +72,8 @@ export default new VueRouter ({
     {
       path: '/home',
       name: 'home',
+      icon:'icon-04',
+      text:"我的",
       component: resolve => require(['../components/home/home'], resolve),
       meta: {
         keepAlive: true
@@ -75,7 +82,7 @@ export default new VueRouter ({
       children: [
         {
               path: '/home/User',
-              name:'User',
+              name:'HomeUser',
               component: resolve => require(['../components/home/user'], resolve),
         },
         {
